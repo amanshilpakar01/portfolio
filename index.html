@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aman Shilpakar | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+    <!-- Particle Background -->
+    <canvas id="particles-bg"></canvas>
+
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <header>
+        <nav class="glass-nav">
+            <div class="logo"></div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact" class="btn-primary">Contact Me</a></li>
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <h1 class="reveal-text">Hi, I'm <span class="gradient-text">Aman Shilpakar</span></h1>
+                <p class="subtitle"><span id="typewriter"></span><span class="cursor">|</span></p>
+                <p class="hero-bio reveal-text delay-1">Creating cutting-edge intelligent systems to solve dynamic problems, with experience in real-time detection, analysis, and deep-learning architectures.</p>
+                <div class="cta-group reveal-text delay-2">
+                    <a href="#projects" class="btn-primary">View Projects</a>
+                    <a href="#about" class="btn-secondary">More About Me</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container section-reveal">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-grid">
+                    <div class="about-text glass-card">
+                        <p>I am a passionate Data Scientist and ML Engineer dedicated to building intelligent systems that solve real-world problems. With a strong foundation in computer engineering, I specialize in Deep Learning, Computer Vision, and Automation. Whether it's predicting stock markets or building AI for healthcare, I aim to merge code with creativity.</p>
+                    </div>
+                    <div class="education glass-card">
+                        <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+                        <div class="edu-item">
+                            <h4>Bachelor in Computer Engineering</h4>
+                            <p>Institute of Engineering (IOE) · Undergraduate</p>
+                        </div>
+                        <div class="edu-item">
+                            <h4>+2 Graduate</h4>
+                            <p>Higher Secondary Education · Science Faculty</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section">
+            <div class="container section-reveal">
+                <h2 class="section-title">Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category glass-card">
+                        <h3>Machine Learning</h3>
+                        <div class="skill-tags">
+                            <span class="tag">Deep Learning</span>
+                            <span class="tag">Computer Vision</span>
+                            <span class="tag">NLP</span>
+                            <span class="tag">PyTorch</span>
+                            <span class="tag">TensorFlow</span>
+                        </div>
+                    </div>
+                    <div class="skill-category glass-card">
+                        <h3>Coding & Tools</h3>
+                        <div class="skill-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">C++</span>
+                            <span class="tag">SQL</span>
+                            <span class="tag">Git</span>
+                            <span class="tag">Docker</span>
+                        </div>
+                    </div>
+                    <div class="skill-category glass-card">
+                        <h3>Web Tech</h3>
+                        <div class="skill-tags">
+                            <span class="tag">HTML/CSS</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">React</span>
+                            <span class="tag">Django</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <div class="container section-reveal">
+                <h2 class="section-title">Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card glass-card hover-glow">
+                        <div class="project-content">
+                            <h3><i class="fas fa-chart-line"></i> Maximum IPO</h3>
+                            <p>A comprehensive stock market prediction system specializing in IPO. Utilizes advanced LSTM and Transformer networks to analyze historical time-series data and market sentiment.</p>
+                            <div class="project-tech">
+                                <span>LSTM</span>
+                                <span>Django</span>
+                                <span>React</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card glass-card hover-glow">
+                        <div class="project-content">
+                            <h3><i class="fas fa-cube"></i> NeRF Engine</h3>
+                            <p>Implementation of Neural Radiance Fields (NeRF) for synthesizing photorealistic 3D scenes from sparse 2D images. Leverages PyTorch and MLPs for volumetric density encoding.</p>
+                            <div class="project-tech">
+                                <span>PyTorch</span>
+                                <span>Computer Vision</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card glass-card hover-glow">
+                        <div class="project-content">
+                            <h3><i class="fas fa-video"></i> Video Captioning</h3>
+                            <p>A multimodal AI system designed to generate accurate, context-aware captions for video content. Includes CNNs for frame extraction and RNNs/LSTMs for sequence generation.</p>
+                            <div class="project-tech">
+                                <span>CNN/RNN</span>
+                                <span>NLP</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card glass-card hover-glow">
+                        <div class="project-content">
+                            <h3><i class="fas fa-pills"></i> Medicine Recognition</h3>
+                            <p>Mobile-ready healthcare assistant capable of identifying pills and medications from camera images using MobileNetV2 architecture for edge-device inference.</p>
+                            <div class="project-tech">
+                                <span>MobileNetV2</span>
+                                <span>Mobile AI</span>
+                            </div>
+                        </div>
+                        </div>
+
+                    <div class="project-card glass-card hover-glow">
+                        <div class="project-content">
+                            <h3><i class="fas fa-cogs"></i> VAR Automation</h3>
+                            <p>Industrial robust automation system employing Vector Auto-Regressive (VAR) models for multivariate time-series analysis to detect anomalies in factory machinery.</p>
+                            <div class="project-tech">
+                                <span>Time-series</span>
+                                <span>Automation</span>
+                            </div>
+                        </div>
+                        </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container section-reveal">
+                <h2 class="section-title">Contact Me</h2>
+                <div class="contact-wrapper glass-card">
+                    <div class="contact-info">
+                        <h3>Let's Connect</h3>
+                        <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.</p>
+                        <ul class="contact-list">
+                            <li><i class="fas fa-envelope"></i> amanshilpakar004@gmail.com</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Kathmandu, Nepal</li>
+                        </ul>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-github"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-group">
+                            <input type="text" id="from_name" name="from_name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="from_email" name="from_email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" id="submit-btn" class="btn-primary w-100">Send Message <i class="fas fa-paper-plane"></i></button>
+                        <p id="form-status" class="form-status"></p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Aman Shilpakar. Built with Code & Data.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
