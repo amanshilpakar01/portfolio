@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Aman Shilpakar — Portfolio Website
 
 A modern, responsive personal portfolio website built with **HTML**, **CSS**, and **JavaScript**.
@@ -13,7 +12,7 @@ A modern, responsive personal portfolio website built with **HTML**, **CSS**, an
 - ✍️ Typewriter animation for "Data Scientist & AI Enthusiast"
 - 🪟 Glassmorphism card design with hover glow effects
 - 📱 Fully responsive (mobile, tablet, desktop)
-- 📬 Contact form via mailto (opens visitor's email app pre-filled)
+- 📬 Contact form with EmailJS (direct email delivery)
 - 🎨 Dark premium theme with purple/blue gradient accents
 - 🔁 Smooth scroll-reveal animations on all sections
 
@@ -26,6 +25,7 @@ portfolio/
 ├── index.html      # Main HTML structure
 ├── style.css       # All styles (glassmorphism, animations, responsive)
 ├── script.js       # Interactivity (particles, typing, scroll reveal, nav)
+├── CNAME           # Custom domain configuration
 └── README.md       # This file
 ```
 
@@ -49,6 +49,7 @@ portfolio/
 - [Google Fonts — Outfit](https://fonts.google.com/specimen/Outfit)
 - [Font Awesome 6](https://fontawesome.com/) for icons
 - Canvas API for particle background animation
+- [EmailJS](https://www.emailjs.com/) for the contact form
 
 ---
 
@@ -60,6 +61,3 @@ portfolio/
 ---
 
 © 2026 Aman Shilpakar. Built with Code & Data.
-=======
-# portfolio
->>>>>>> d864b8197e57eb5c8f19d439c749c962319b93b4
