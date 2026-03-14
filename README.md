@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Aman Shilpakar — Portfolio Website
 
 A modern, responsive personal portfolio website built with **HTML**, **CSS**, and **JavaScript**.
@@ -59,3 +60,6 @@ portfolio/
 ---
 
 © 2026 Aman Shilpakar. Built with Code & Data.
+=======
+# portfolio
+>>>>>>> d864b8197e57eb5c8f19d439c749c962319b93b4

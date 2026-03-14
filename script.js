@@ -80,42 +80,70 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Contact Form — mailto handler (works without a server)
+// Contact Form — EmailJS Integration
 (function () {
-    const form   = document.getElementById('contact-form');
-    const btn    = document.getElementById('submit-btn');
+    // IMPORTANT: Replace these with your actual IDs from EmailJS
+    const PUBLIC_KEY = "s0j0SbbnQ5duzBop-";
+    const SERVICE_ID = "service_5rwwhho";
+    const TEMPLATE_ID = "YOUR_TEMPLATE_ID";
+
+    // Initialize EmailJS
+    emailjs.init(PUBLIC_KEY);
+
+    const form = document.getElementById('contact-form');
+    const btn = document.getElementById('submit-btn');
     const status = document.getElementById('form-status');
 
     if (form) {
         form.addEventListener('submit', function (e) {
             e.preventDefault();
 
-            const name    = document.getElementById('from_name').value.trim();
-            const email   = document.getElementById('from_email').value.trim();
-            const message = document.getElementById('message').value.trim();
+            // Check if keys are set
+            if (PUBLIC_KEY === "YOUR_PUBLIC_KEY") {
+                status.textContent = '❌ Please configure your EmailJS Public Key in script.js';
+                status.className = 'form-status error';
+                console.error("EmailJS Public Key not set.");
+                return;
+            }
 
-            const subject = encodeURIComponent('Portfolio Contact from ' + name);
-            const body    = encodeURIComponent(
-                'Name: ' + name + '\nEmail: ' + email + '\n\nMessage:\n' + message
-            );
+            // Change button state to loading
+            const originalBtnContent = btn.innerHTML;
+            btn.innerHTML = 'Sending... <i class="fas fa-spinner fa-spin"></i>';
+            btn.disabled = true;
 
-            // Open the user's default email app pre-filled
-            window.location.href =
-                'mailto:amanshilpakar004@gmail.com?subject=' + subject + '&body=' + body;
+            // Send form using EmailJS
+            emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, this)
+                .then(() => {
+                    // Success feedback
+                    btn.innerHTML = 'Sent! <i class="fas fa-check"></i>';
+                    btn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+                    status.textContent = '✅ Message sent successfully! I will get back to you soon.';
+                    status.className = 'form-status success';
+                    form.reset();
 
-            // Show success feedback
-            btn.innerHTML        = 'Opening Email App... <i class="fas fa-check"></i>';
-            btn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
-            status.textContent   = '✅ Your email app should open now. Just hit Send!';
-            status.className     = 'form-status success';
+                    setTimeout(() => {
+                        btn.innerHTML = originalBtnContent;
+                        btn.style.background = '';
+                        btn.disabled = false;
+                        status.textContent = '';
+                        status.className = 'form-status';
+                    }, 5000);
+                }, (error) => {
+                    // Error feedback
+                    console.error('EmailJS Error:', error);
+                    btn.innerHTML = 'Error! <i class="fas fa-exclamation-triangle"></i>';
+                    btn.style.background = 'linear-gradient(135deg, #ef4444, #dc2626)';
+                    status.textContent = '❌ Failed to send message. Please try again or use the email link.';
+                    status.className = 'form-status error';
+                    btn.disabled = false;
 
-            setTimeout(() => {
-                btn.innerHTML    = 'Send Message <i class="fas fa-paper-plane"></i>';
-                btn.style.background = '';
-                status.textContent   = '';
-                status.className     = 'form-status';
-                form.reset();
-            }, 5000);
+                    setTimeout(() => {
+                        btn.innerHTML = originalBtnContent;
+                        btn.style.background = '';
+                        status.textContent = '';
+                        status.className = 'form-status';
+                    }, 5000);
+                });
         });
     }
 })();
