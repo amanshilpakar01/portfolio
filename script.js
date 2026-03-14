@@ -85,7 +85,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     // IMPORTANT: Replace these with your actual IDs from EmailJS
     const PUBLIC_KEY = "s0j0SbbnQ5duzBop-";
     const SERVICE_ID = "service_5rwwhho";
-    const TEMPLATE_ID = "template_wro6h0e";
+    const TEMPLATE_ID = "template_q2h4jsb";
 
     // Initialize EmailJS
     emailjs.init(PUBLIC_KEY);
