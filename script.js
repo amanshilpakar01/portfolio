@@ -130,10 +130,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                     }, 5000);
                 }, (error) => {
                     // Error feedback
-                    console.error('EmailJS Error:', error);
+                    console.error('EmailJS Error Object:', error);
+                    const errorMsg = error?.text || error?.message || 'Unknown error';
+                    console.error('EmailJS Error Message:', errorMsg);
+                    
                     btn.innerHTML = 'Error! <i class="fas fa-exclamation-triangle"></i>';
                     btn.style.background = 'linear-gradient(135deg, #ef4444, #dc2626)';
-                    status.textContent = '❌ Failed to send message. Please try again or use the email link.';
+                    status.textContent = `❌ Error: ${errorMsg}. Please check console for details.`;
                     status.className = 'form-status error';
                     btn.disabled = false;
 
